@@ -1,0 +1,194 @@
+body{
+    width: 1440px;
+    height: 1140px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EFEFEF;
+}
+
+.exit_btn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.exit_btn button{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.course_container{
+    background-color: #BE264C;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.description_container{
+    margin-left: 77px;
+    margin-top: 57px;
+    color: #ffffff;
+}
+
+#course{
+    font-family: 'Raleway';
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.description_container h1{
+    margin-top: 30px;
+    font-size: 64px;
+    font-weight: 300;
+}
+
+.course_description{
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 40px;
+    justify-content: space-around;
+    margin-right: 95px;
+}
+/*  */
+.course_programm{
+    display: flex;
+    margin-top: 60px;
+}
+
+.course_programm_description{
+    width: 847px;
+    margin-left: 77px;
+}
+
+.course_programm_description h1{
+    font-family: 'Raleway';
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.disciplines_list{
+    margin-top: 40px;
+    padding: 0;
+}
+
+.disciplines_list li{
+    width: 847px;
+    height: 80px;
+    margin: 0;
+    list-style-type: none;
+    border-bottom: 1px solid #BE264C;
+    font-family: 'Raleway';
+    font-size: 32px;
+    font-weight: 300;
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+/* .disciplines_list li p{
+
+    vertical-align: middle;
+} */
+
+/* Цена */
+.price{
+    width: 298px;
+    margin-left: 100px;
+}
+
+.price_block{
+    background-color: #ffffff;
+}
+
+.price_rectangle{
+    width: 298px;
+    height: 76px;
+}
+
+.little_price{
+    font-family: 'Roboto';
+    display: inline;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    font-weight: light;
+    font-style: normal;
+    margin: 0px 0 0px 10px;
+    vertical-align: middle;
+}
+
+.discount_block{
+    position: absolute;
+    background-color: #BE264C;
+    color: #FFFFFF;
+    width: 120px;
+    height: 76px;
+    display: inline-block;
+    margin-left: 77px;
+    margin-bottom: 74px;
+}
+
+.discount_block p{
+    font-family: 'Roboto';
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.new_price_block{
+    display: flex; 
+}
+
+.new_price{
+    margin: 0px 0 0px 10px;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    padding-bottom: 10px;
+}
+
+.new_price_per_month{
+    font-family: 'Roboto';
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 2px;
+    vertical-align: middle;
+    margin-top: 18px;
+    margin-left: 6px;
+}
+
+.course_buttons{
+    margin-top: 30px;
+}
+
+.sign_up{
+    font-family: 'Raleway';
+    width: 295px;
+    height: 60px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    background-color: #BE264C;
+    color: #FFFFFF;
+    letter-spacing: 0.06em;
+    transition-property: all;
+    border: 3px solid #BE264C;
+    transition: ease-out 0.6s;
+}
+
+.sign_up:hover{
+    background-color: #ffffff;
+    color: #BE264C;
+    
+}

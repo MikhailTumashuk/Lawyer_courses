@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>Basics</title>
+</head>
+<body *ngIf="!a.isAuthenticated">
+    <h1>Страница профиля недоступна</h1>
+    <a routerLink="/home/auth"><button class="enter_account">Перейти к авторизации</button></a>
+</body>
+<body *ngIf="a.isAuthenticated">
+    <a class="exit_btn" routerLink="/home"><button><img src="assets/exit.svg" alt=""></button></a>
+    <div class="user_container">
+        <img src="assets/avatar.png" alt="">
+        <div *ngIf="accountForm" class="name_and_number">
+            <h1>
+                {{f['lastName'].value}} {{f['firstName'].value}}
+            </h1>
+            <p>
+                {{f['phone'].value}}
+            </p>
+        </div>
+    </div>
+
+    <div class="account_container">
+        <div class="description_container">
+            <h1>О себе</h1>
+            <p align="justify">Вносите реальные данные, потому что они будут отображены на сертификате.</p>
+        </div>
+        <div class="form_container">
+            <form [formGroup]="accountForm" *ngIf="accountForm" action="submit" (ngSubmit)="onSubmit()">
+                
+                <input class="form-control" type="username" formControlName="firstName"  placeholder="Имя" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }">
+                <div *ngIf="submitted && f['firstName'].errors !== null" class="invalid-feedback">                    
+                    <div *ngIf="f['firstName'].errors['required']">Введите имя</div>
+                    <div *ngIf="f['firstName'].errors['minlength']">Имя должно состоять минимум из 2 символов</div>
+                    <div *ngIf="f['firstName'].errors['maxlength']">Имя должно состоять максимум из 20 символов</div>
+                    <div *ngIf="f['firstName'].errors['pattern']">Имя может содержать только буквы</div>
+                </div>
+
+                <input class="form-control" type="text" formControlName="lastName" placeholder="Фамилия" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
+                <div *ngIf="submitted && f['lastName'].errors !== null" class="invalid-feedback">                    
+                    <div *ngIf="f['lastName'].errors['required']">Введите фамилию</div>
+                    <div *ngIf="f['lastName'].errors['minlength']">Фамилия должна состоять минимум из 2 символов</div>
+                    <div *ngIf="f['lastName'].errors['maxlength']">Фамилия должна состоять максимум из 20 символов</div>
+                    <div *ngIf="f['lastName'].errors['pattern']">Фамилия может содержать только буквы</div>
+                </div>
+
+                <input class="form-control" type="date" formControlName="birthDate" id="datefield"/>
+
+                <input class="form-control" type="tel" formControlName="phone" id="phone" name="phone" placeholder="Номер телефона" pattern="[+]{1}[0-9]{10,11}" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }" required>
+                <div *ngIf="submitted && f['phone'].errors !== null" class="invalid-feedback">                    
+                    <div *ngIf="f['phone'].errors['required']">Введите телефон</div>
+                    <div *ngIf="f['phone'].errors['pattern']">Телефон должен обладать маской вида +79051234567</div>
+                </div>
+
+                <input class="form-control" type="city" formControlName="city"  placeholder="Город" [ngClass]="{ 'is-invalid': submitted && f['city'].errors }">
+                <div *ngIf="submitted && f['city'].errors !== null" class="invalid-feedback">                    
+                    <div *ngIf="f['city'].errors['required']">Введите город</div>
+                    <div *ngIf="f['city'].errors['minlength']">Город должен состоять минимум из 2 символов</div>
+                    <div *ngIf="f['city'].errors['maxlength']">Город должен состоять максимум из 20 символов</div>
+                    <div *ngIf="f['city'].errors['pattern']">Город может содержать только буквы</div>
+                </div>
+
+                <div class="choose_gender">
+                    <input name="gender" id="woman" type="radio" formControlName="gender" [attr.checked]="f['gender'].value == '1' ? 'checked' : null" value="1">
+                    <label for="woman">Женский</label>
+                    <input name="gender" id="man" type="radio" formControlName="gender" [attr.checked]="f['gender'].value == '0' ? 'checked' : null" value="0">
+                    <label for="man">Мужской</label>
+                </div>
+                <button id="save_btn">
+                    Сохранить
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="telegram_bot_container">
+        <div class="bot_description">
+            <h1>Телеграм-бот</h1>
+            <p>Поможет с выбором курсов и ответит на ваши вопросы</p>
+        </div>
+        <div class="help">
+            <p align="justify">В появившемся окне нажмите «Открыть в приложении Telegram». Затем кнопку «Начать» в чате.</p>
+            <a href=" https://t.me/LawyersProjectBot" target="_blank">
+                <button id="plug_btn">Подключить</button>
+            </a>
+        </div>
+    </div>
+    
+    <div class="change_password_container">
+        <h1>Изменение пароля</h1>
+        <div class="change_password_form_container">
+            <form [formGroup]="passwordForm" *ngIf="passwordForm" action="submit" (ngSubmit)="onPasswordSubmit()">
+                <div>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        placeholder="Текущий пароль"                        
+                        formControlName="passwordCurrent"  
+                        [ngClass]="{ 'is-invalid': submittedPassword && p['passwordCurrent'].errors }"
+                    />
+                    <div *ngIf="submittedPassword && p['passwordCurrent'].errors" class="invalid-feedback">
+                        <div *ngIf="p['passwordCurrent'].errors['required']">Введите пароль</div>
+                        <div *ngIf="p['passwordCurrent'].errors['minlength']">Пароль должен состоять минимум из 7 символов</div>
+                        <div *ngIf="p['passwordCurrent'].errors['pattern']">Пароль должен содержать только буквы и цифры</div>
+                        <div *ngIf="p['passwordCurrent'].errors['pattern']">Пароль должен содержать только буквы и цифры</div>
+                    </div>
+                </div>
+                <div>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="exampleDropdownFormPassword1"
+                        placeholder="Новый пароль"                                                
+                        formControlName="password1"  
+                        [ngClass]="{ 'is-invalid': submittedPassword && p['password1'].errors }"
+                    />
+                    <div *ngIf="submittedPassword && p['password1'].errors" class="invalid-feedback">
+                        <div *ngIf="p['password1'].errors['required']">Введите новый пароль</div>
+                        <div *ngIf="p['password1'].errors['minlength']">Новый пароль должен состоять минимум из 7 символов</div>
+                        <div *ngIf="p['password1'].errors['pattern']">Новый пароль должен содержать только буквы и цифры</div>
+                        <div *ngIf="p['password1'].errors['pattern']">Новый пароль должен содержать только буквы и цифры</div>
+                    </div>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="exampleDropdownFormPassword1"
+                        placeholder="Повторите новый пароль"                                                
+                        formControlName="password2"  
+                        [ngClass]="{ 'is-invalid': submittedPassword && p['password2'].errors }"
+                    />
+                    <div *ngIf="submittedPassword && p['password2'].errors" class="invalid-feedback">
+                        <div *ngIf="p['password2'].errors['required']">Введите подтверждение нового пароля</div>
+                        <div *ngIf="p['password2'].errors['minlength']">Подтверждение должно состоять минимум из 7 символов</div>
+                        <div *ngIf="p['password2'].errors['maxlength']">Подтверждение должно состоять максимум из 26 символов</div>
+                        <div *ngIf="p['password2'].errors['pattern']">Подтверждение должно содержать только буквы и цифры</div>
+                        <div *ngIf="p['password2'].errors['mustMatch']">Пароли должны совпадать</div>
+                    </div>
+                </div>
+                <button id="save_password_btn">Сохранить</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+<div class="dropdown_block" id="form_container">
+    <p class="dropdown_header">Регистрация</p>
+    <a class="exit_btn" routerLink="/home"><button><img src="assets/exit.svg" alt=""></button></a>
+    <form class="dropdown_form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div>
+            <input
+                type="login"
+                maxlength="20"
+                class="form-control"
+                id="exampleDropdownFormEmail1"
+                placeholder="Логин"
+                autocomplete="username"
+                formControlName="login" 
+                [ngClass]="{ 'is-invalid': submitted && f['login'].errors }"
+            />
+            <div *ngIf="submitted && f['login'].errors" class="invalid-feedback">
+                <div *ngIf="f['login'].errors['required']">Введите логин</div>
+                <div *ngIf="f['login'].errors['minlength']">Логин должен состоять минимум из 6 символов</div>
+                <div *ngIf="f['login'].errors['pattern']">Логин должен содержать только буквы и цифры</div>
+                <div *ngIf="f['login'].errors['pattern']">Логин должен содержать только буквы и цифры</div>
+            </div>
+        </div>
+        <div>
+            <input
+                type="password"
+                class="form-control"
+                maxlength="26"
+                id="exampleDropdownFormPassword1"
+                placeholder="Пароль"
+                autocomplete="current-password"                
+                formControlName="password1" 
+                [ngClass]="{ 'is-invalid': submitted && f['password1'].errors }"                
+            />
+            <div *ngIf="submitted && f['password1'].errors" class="invalid-feedback">
+                <div *ngIf="f['password1'].errors['required']">Введите пароль</div>
+                <div *ngIf="f['password1'].errors['minlength']">Пароль должен состоять минимум из 7 символов</div>
+                <div *ngIf="f['password1'].errors['pattern']">Пароль должен содержать только буквы и цифры</div>
+                <div *ngIf="f['password1'].errors['pattern']">Пароль должен содержать только буквы и цифры</div>
+            </div>
+            <input
+                type="password"
+                maxlength="26"
+                class="form-control"
+                id="exampleDropdownFormPassword1"
+                placeholder="Повторите пароль"
+                autocomplete="current-password"                
+                formControlName="password2" 
+                [ngClass]="{ 'is-invalid': submitted && f['password2'].errors }"
+            />
+            <div *ngIf="submitted && f['password2'].errors" class="invalid-feedback">
+                <div *ngIf="f['password2'].errors['required']">Введите подтверждение пароля</div>
+                <div *ngIf="f['password2'].errors['minlength']">Подтверждение должно состоять минимум из 7 символов</div>
+                <div *ngIf="f['password2'].errors['maxlength']">Подтверждение должно состоять максимум из 26 символов</div>
+                <div *ngIf="f['password2'].errors['pattern']">Подтверждение должно содержать только буквы и цифры</div>
+                <div *ngIf="f['password2'].errors['mustMatch']">Пароли должны совпадать</div>
+            </div>
+        </div>
+        
+        <button class="enter_account">Регистрация</button>
+        <a routerLink="/home/auth"><button class="create_account">Войти в аккаунт</button></a>
+    </form>

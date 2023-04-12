@@ -1,0 +1,49 @@
+<nav class="navbar">
+    <div class="container">
+        <button id="logo" (click)="to_top()"><img src="assets/Logo.svg" alt="crash"></button>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+        
+        <div class="navbar-wrap">
+            <ul class="navbar-menu">
+                <li><button class="nav_btn" id="about_btn" (click)="to_about()">О нас</button></li>
+                <li><button class="nav_btn" id="reviews_btn" (click)="to_reviews()">Отзывы</button></li>
+                <li><button class="nav_btn" id="chat_bot_btn" (click)="to_chat_bot()">Чат-Бот</button></li>
+                <li><a routerLink="auth"><button class="nav_btn">Войти</button></a>
+                <!-- <div ngbDropdown>
+			        <button id="enter_btn" ngbDropdownToggle>
+				        Вход
+			        </button>
+			        <div ngbDropdownMenu aria-labelledby="dropdownForm1" class="dropdown-menu dropdown-menu-end dropdown_block">
+                        <p class="dropdown_header">Войти в аккаунт</p>
+				        <form class="dropdown_form">
+					        <div>
+						        <input
+							        type="login"
+							        class="form-control"
+							        id="exampleDropdownFormEmail1"
+							        placeholder="Логин"
+							        autocomplete="username"
+						        />
+					        </div>
+					        <div>
+						        <input
+							        type="password"
+							        class="form-control"
+							        id="exampleDropdownFormPassword1"
+							        placeholder="Пароль"
+							        autocomplete="current-password"
+                                    id="password"
+						        />
+					        </div>
+					        <a routerLink="account"><button class="enter_account">Войти</button></a>
+                            <a routerLink="registration"><button class="create_account" easy-remove="#target" easy-class="open" onclick="openCreateAccountOverlay()">Создать аккаунт</button></a>
+				        </form>
+			            </div>
+		        </div> -->
+            </li>    
+            </ul>
+        </div>
+    </div>
+</nav>

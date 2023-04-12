@@ -1,0 +1,8 @@
+{
+    "server": {
+        "port": 4000
+    },
+    "connection": {
+        "string": "postgres://nliuehkj:dM2jWlPtaznop9LMkTsRNNtWPR8u_f6z@snuffleupagus.db.elephantsql.com:5432/nliuehkj"
+    }
+}

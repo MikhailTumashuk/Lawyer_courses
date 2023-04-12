@@ -1,0 +1,39 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+<div class="dropdown_block">
+    <p class="dropdown_header">Вход в аккаунт</p>
+    <a class="exit_btn" routerLink="/home"><button><img src="assets/exit.svg" alt=""></button></a>
+    <form class="dropdown_form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <input
+                type="login"
+                class="form-control"
+                id="exampleDropdownFormEmail1"
+                placeholder="Логин"
+                autocomplete="username"
+                formControlName="login" 
+                [ngClass]="{ 'is-invalid': submitted && f['login'].errors }"
+            />
+            <div *ngIf="submitted && f['login'].errors" class="invalid-feedback">
+                <div *ngIf="f['login'].errors['required']">Введите логин</div>                
+            </div>
+        </div>
+        <div>
+            <input
+                type="password"
+                class="form-control"
+                id="exampleDropdownFormPassword1"
+                placeholder="Пароль"
+                autocomplete="current-password"
+                id="password"
+                formControlName="password" 
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+            />
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Введите пароль</div>                
+            </div>
+        </div>
+        <button class="enter_account">Войти</button>
+        <a routerLink="/home/registration"><button class="create_account">Создать аккаунт</button></a>

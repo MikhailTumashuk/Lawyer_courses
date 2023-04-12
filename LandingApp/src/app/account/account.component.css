@@ -1,0 +1,228 @@
+body{
+    background-color: #EFEFEF;
+    height: 2048px;
+    padding-top: 1px;
+}
+
+
+.exit_btn{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+.exit_btn button{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.user_container{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 92px;
+    display: flex;
+}
+
+.user_container h1{
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.user_container p{
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.name_and_number{
+    margin-left: 26px;
+    margin-top: 16px;
+}
+
+.account_container{
+    display: flex;
+    width: 1187px;
+    height: 590px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: #ffffff;
+}
+
+.description_container{
+    width: 350px;
+    margin-top: 67px;
+    margin-left: 42px;
+}
+
+.description_container h1{
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.description_container p{
+    font-family: 'Roboto';
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.form_container{
+    margin-left: 190px;
+    margin-right: 110px;
+    margin-top: 67px;
+}
+
+.form-control{
+    width: 496px;
+    height: 54px;
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.choose_gender{
+    display: flex;
+    flex-direction: row;
+    margin-top: 14px;
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.choose_gender label{
+    margin-left: 8px;
+}
+
+#woman{
+    margin-left: 34px;
+}
+
+#save_btn{
+    margin-top: 16px;
+    width: 275px !important;
+    height: 50px !important;
+    background-color: #BE264C !important;
+    color: #ffffff;
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+    border: 3px solid #BE264C !important;
+    transition: ease-out 0.6s;
+    border: none;
+}
+
+#save_btn:hover{
+    background-color: #ffffff !important;
+    color: #BE264C !important; 
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+    border: 3px solid #BE264C !important;
+}
+
+.telegram_bot_container{
+    display: flex;
+    width: 1187px;
+    height: 286px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: #ffffff;
+}
+
+.bot_description{
+    margin: 68px 0 0 42px;
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.help{
+    margin: 68px 100px 0 190px;
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+#plug_btn{
+    margin-top: 16px;
+    width: 275px !important;
+    height: 50px !important;
+    background-color: #BE264C !important;
+    color: #ffffff;
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+    border: 3px solid #BE264C;
+    transition: ease-out 0.6s;
+    border: none;
+    border: 3px solid #BE264C !important;
+}
+
+#plug_btn:hover{
+    background-color: #ffffff !important;
+    color: #BE264C !important; 
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.change_password_container{
+    display: flex;
+    width: 1187px;
+    height: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 140px;
+    background-color: #ffffff;
+}
+
+.change_password_container h1{
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 400;
+    margin: 67px 0 0 42px;
+}
+
+.change_password_container form{
+    margin: 82px 110px 0 334px;
+
+}
+
+.form-control{
+    margin-bottom: 25px;
+
+}
+
+#save_password_btn{
+    margin-top: 16px;
+    width: 275px !important;
+    height: 50px !important;
+    background-color: #BE264C !important;
+    color: #ffffff;
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+    border: 3px solid #BE264C;
+    transition: ease-out 0.6s;
+    border: none;
+    border: 3px solid #BE264C !important;
+}
+
+#save_password_btn:hover{
+    background-color: #ffffff !important;
+    color: #BE264C !important; 
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>W</title>
+
+	<!-- Шрифты с Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+	/>
+</head>
+<app-header></app-header>
+<body>
+	<div id="img_container" class="main_image">
+		<p class="image_header">Одна площадка - 1000 возможностей</p>
+		<p class="image_footer">W-платформа, на которой вы станете мастером юридического дела</p>
+		<button class="btn btn-outline-light" id="go_to_courses" (click)="to_courses()">Пройти курс</button>
+		<img src="assets/Building.png" alt="go out from our site!">
+	</div>
+	
+	<p class="headers" id="infographics_header">
+		Выбирайте свое призвание
+	</p>
+	
+	<div class="infographic_cards">
+		<div class="infographic_card">
+			<img class="infographic_img1" src="/assets/judge_icon.svg" alt="shit">
+			<p class="infographic_header" id="card_1">
+				Юристы - правоохранители
+			</p>
+			<p class="infographic_card_text">
+				Занимается применением 
+				санкций рассмотрением споров
+				(имущественных, трудовых,
+				семейных, жилищных)
+			</p>
+		</div>
+		<div class="infographic_card">
+			<img class="infographic_img2" src="/assets/economist_icon.svg" alt="shit">
+			<p class="infographic_header" id="card_2">
+				Юристы - <br>экономисты
+			</p>
+			<p class="infographic_card_text">
+				Составление договоров,
+				контроль над их<br> исполнением
+				и <br>оспаривание в суде
+ 				договорных условий
+			</p>
+		</div>
+		<div class="infographic_card">
+			<img class="infographic_img3" src="/assets/political_icon.svg" alt="shit">
+			<p class="infographic_header" id="card_3">
+				Политические консультанты
+			</p>
+			<p class="infographic_card_text">
+				Участвуют в подготовке<br>
+				проектов правовых<br>
+				документов
+			</p>
+		</div>
+		<div class="infographic_card">
+			<img class="infographic_img4" src="/assets/rights_defenders_icon.svg" alt="shit">
+			<p class="infographic_header" id="card_4">
+				Юристы - правозащитники
+			</p>
+			<p class="infographic_card_text">
+				Общественная деятельность,
+ 				направленная на защиту<br>
+				законных прав человека
+			</p>
+		</div>
+	</div>
+
+	<p class="headers" id="courses_header">
+		Популярные курсы
+	</p>
+	<div class="courses_block">
+
+		<div class="courses_cards" id="courses_card1">
+			<div class="courses_card">
+				<p class="first_courses_card_header">Курс</p>
+				<p class="second_courses_card_header">Основы права</p>
+				<video id="video1" autoplay="autoplay" loop="loop" src="assets/figovina1.mp4"></video>
+				<div class="price_block">
+					<div class="price_rectangle">
+						<s>7000</s><p class="little_price">руб/мес.</p> <div class="discount_block"><p>-50%</p></div>
+						<div class="new_price_block">
+							<p class="new_price">
+								3500 
+							</p><p class="new_price_per_month">
+								руб/мес.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="course_buttons">
+					<a routerLink="basics-of-law"><button class="detailed">Подробнее</button></a>
+					<button class="sign_up" onclick="">Записаться</button>
+				</div>
+			</div>
+			<div class="courses_card">
+				<p class="first_courses_card_header">Профессия</p>
+				<p class="second_courses_card_header">Следователь</p>
+				<video id="video2" autoplay="autoplay" loop="loop" src="assets/figovina2.mp4"></video>
+				<div class="price_block">
+					<div class="price_rectangle">
+						<s>8400</s><p class="little_price">руб/мес.</p> <div class="discount_block"><p>-50%</p></div>
+						<div class="new_price_block">
+							<p class="new_price">
+								4200 
+							</p><p class="new_price_per_month">
+								руб/мес.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="course_buttons">
+					<button class="detailed" onclick="">Подробнее</button>
+					<button class="sign_up" onclick="">Записаться</button>
+				</div>
+			</div>
+			<div class="courses_card">
+				<p class="first_courses_card_header">Профессия</p>
+				<p class="second_courses_card_header">Адвокат</p>
+				<video id="video3" autoplay="autoplay" loop="loop" src="assets/figovina3.mp4"></video>
+				<div class="price_block">
+					<div class="price_rectangle">
+						<s>6800</s><p class="little_price">руб/мес.</p> <div class="discount_block"><p>-40%</p></div>
+						<div class="new_price_block">
+							<p class="new_price">
+								4080 
+							</p><p class="new_price_per_month">
+								руб/мес.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="course_buttons">
+					<button class="detailed" onclick="">Подробнее</button>
+					<button class="sign_up" onclick="">Записаться</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<p class="headers" id="reviews_header">Отзывы</p>
+
+	<swiper-container class="mySwiper" space-between="30" slides-per-view="auto" pagination="true"
+    pagination-clickable="true">
+    	<swiper-slide>
+			<div class="review_header">
+				<img class="review_img" src="/assets/review_man1.png" alt="not man">
+				<div class="review_author">Геннадий Букин, г.Екатеринбург</div>
+				<div class="stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+				</div>
+			</div>
+			<p>
+			Проходил в 2021 году курс по основам права. Я в восторге!!!
+
+			Курс включает в себя колоссальный объем информации, но при этом так грамотно выстроен, что
+			усвоение этой информации проходит на ура. 
+
+			Подача информации была в виде записанных лекций. Также я брал пакет Про, где каждую неделю 
+			со мной созванивался куратор и мы беседовали по пройденному материалу.
+
+			Сейчас работаю в данной сфере и планирую пройти еще курс по профессии Адвокат.
+			Уверен не разочаруюсь.
+			</p>
+		</swiper-slide>
+    	<swiper-slide>
+			<div class="review_header">
+				<img class="review_img" src="/assets/review_man2.png" alt="not man">
+				<div class="review_author">Полежайкина Валерия, г.Сызрань</div>
+				<div class="stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+				</div>
+			</div>
+			<p>
+			Проходил в 2021 году курс по основам права. Я в восторге!!!
+
+			Курс включает в себя колоссальный объем информации, но при этом так грамотно выстроен, что
+			усвоение этой информации проходит на ура. 
+
+			Подача информации была в виде записанных лекций. Также я брал пакет Про, где каждую неделю 
+			со мной созванивался куратор и мы беседовали по пройденному материалу.
+
+			Сейчас работаю в данной сфере и планирую пройти еще курс по профессии Адвокат.
+			Уверен не разочаруюсь.
+			</p>
+		</swiper-slide>
+    	<swiper-slide>
+			<div class="review_header">
+				<img class="review_img" src="/assets/review_man3.png" alt="not man">
+				<div class="review_author">Валерий Петровичев, г.Краснодар</div>
+				<div class="stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+					<img src="/assets/star.png" alt="not stars">
+				</div>
+			</div>
+			<p>
+				Проходил в 2021 году курс по основам права. Я в восторге!!!
+
+				Курс включает в себя колоссальный объем информации, но при этом так грамотно выстроен, что
+				усвоение этой информации проходит на ура. 
+
+				Подача информации была в виде записанных лекций. Также я брал пакет Про, где каждую неделю 
+				со мной созванивался куратор и мы беседовали по пройденному материалу.
+
+				Сейчас работаю в данной сфере и планирую пройти еще курс по профессии Адвокат.
+				Уверен не разочаруюсь.
+			</p>
+		</swiper-slide>
+  	</swiper-container>
+
+	  <p class="headers" id="register_header">Поможем с выбором</p>
+	<div class="chat_bot_block">
+		<div class="chat_bot_container">
+			<div class="chat_bot_description">
+				<p align="justify">
+					Не можете определиться с выбором курса?<br> Введите ваши данные и вам напишет наш <br>чат-бот в Телеграм.
+				<p>
+	
+			</div>
+			<div class="chat_bot_form">		
+				<form [formGroup]="form" (ngSubmit)="onSubmit()">
+				<div class="form-group">
+					<span
+					*ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+					 class="name_validation">
+						<small *ngIf="form.get('name')?.hasError('minlength')">Поле имени не может содержать менее 2-х символов</small>
+						<small *ngIf="form.get('name')?.hasError('required')">Поле имени не может быть пустым</small>
+					</span>
+					<div class="name_block">
+						<label for="name_input" id="name_label">Имя</label>
+						<input type="text" (input)="onInput($event)"  (keypress)="prohibit_special_char($event)" class="form-control" id="address_input" name="userName" placeholder="Анна" formControlName="name" maxlength="20" (emojiSelect)="onEmojiSelect()">
+					</div>
+					<span
+						*ngIf="form.get('name')?.invalid && form.get('address')?.touched"
+						 class="address_validation">
+							<small *ngIf="form.get('address')?.hasError('minlength')">Введите не менее 5-ти символов</small>
+							<small *ngIf="form.get('address')?.hasError('required')">Поле телеграм-адреса не может быть пустым</small>
+					</span>
+					<div class="telegram_block">
+						<label for="telegram_input">Телеграм</label>
+						<input type="text" (input)="onInput($event)" (keypress)="prohibit_special_char($event)" class="form-control" id="telegram_input" placeholder="@address" formControlName="address" maxlength="32" (emojiSelect)="onEmojiSelect()">
+					</div>
+	
+				</div>	
+				<button class="send_btn" type="submit" [disabled]="form.invalid">
+					Отправить
+				</button>
+				</form>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="../scripts/main.js"></script>
+</body>
+</html>
